@@ -20,6 +20,7 @@ import {
   RotateCcw,
   Sparkles
 } from 'lucide-react'
+import Greenhouse3D from './Greenhouse3D.jsx'
 
 const clamp = (val, min, max) => Math.min(Math.max(val, min), max)
 const round1 = (val) => Math.round(val * 10) / 10
@@ -605,6 +606,16 @@ export default function App() {
           </div>
         </article>
       </section>
+
+      {/* MAQUETA 3D INTERACTIVA DEL VIVERO EN ARCO */}
+      <Greenhouse3D
+        telemetry={telemetry}
+        isIrrigating={isIrrigating}
+        autoMode={autoMode}
+        minThreshold={minThreshold}
+        maxThreshold={maxThreshold}
+        onToggleIrrigation={handleManualIrrigationToggle}
+      />
 
       {/* 3. CULTIVOS & 4. CONTROL DE RIEGO */}
       <div className="main-grid">
